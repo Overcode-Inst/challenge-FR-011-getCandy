@@ -26,9 +26,9 @@ Ao completar, não esqueça de publicar no linkedin e adicionar #handsOnRoadmap
 
 <br />
 
-Imagine que foi pedido a você para fazer uma página que precise mostrar sobre gêneros de livros, porém isso precisa estar acessível para multi-idiomas.
+Imagine que foi pedido a você para fazer uma aplicação para uma estande de doces que vai estar em um evento. Essa aplicação vai ficar numa tela de auto-atendimento.
 
-Para divulgar mais sobre a leitura e sua importância.
+E o propósito é que será para agilizar os casos comuns de venda.
 
 <br />
 
@@ -42,8 +42,35 @@ Sua aplicação deve ter:
 
 <br />
 
-- Pelo menos cinco sections, sendo duas para eevidenciar sobre a importância da leitura e pelo menos três falando sobre seus três gêneros de livros favoritos (uma section cada pelo menos, podendo ser mais ou falar de mais gêneros de livros).
-- A aplicação deve contar com a possibilidade de trocar de idiomas entre português, inglês e espanhol. Através de um botão de seleção que fica no canto superior direito da página.
+- Ao iniciar a aplicação tem um contador de quantos doces de cada tipo estão na cesta.
+- Há três tipos de doces. Que tem preços e características diferentes.
+- Na tela home além do contador por tipo de doce precisa ter o preço unitário e características. Também apresentando a soma do valor de cada doce e total. Terá também o nome do cliente, que só aparece se tiver um nome indicado;
+  - doce 1: Doce chocolate trufado com leite condesado e limão siciliano, R$ 2,00
+  - doce 2: Doce de doce de leite com recheio de maracujá com sementes cristalizadas de maracujá, R$ 3,00
+  - doce 3: Doce de bolacha com paleta italiana de (morango, limão ou laranja) e mel, R$ 4,50
+- Há três botões de sendo eles para?
+
+  - Fechar pedido, reseta os valores e abre um modal informando que o pedido foi feito e será chamado pelo nome indicado.
+  - Limpar, que reseta todos dados do momento, limpando para estado inicial.
+  - Começar, que abre um modal para que comece a seleção dos doces.
+
+- O modal do processo de adicionar doces têm dois fluxos diferentes, sendo o randômico ou escolha seus doces.
+
+  - Ao abrir o modal aparece um input com nome e dois botões permitindo o cliente escolher qual fluxo irá seguir. Só pode seguir um fluxo após adicionar um nome.
+
+- fluxo randômico
+
+  - Esse fluxo presa pela maior quantidade de doces,então ao clicar em randõmico é mostrado um input de quantidade de dinheiro que quer gastar, e com isso é feito a distribuição de forma que sobre menos dinheiro, mas se obtenha a maior quantidade de doces.
+  - antes de sair do modal é mostrado a quantidade de cada doce e o troco.
+
+- fluxo de escolha os seus doces.
+
+  - É um fluxo com três steps de escolha.
+  - Vai aparecer o primeiro doce que é indicado a quantidade que se deseja, depois e segundo e então o terceito. Um em cada tela, e ao escolher e clicar em próximo aparece o seguinte. Pode ser escolhido zero como opção.
+  - Ao escolher os três doces é mostrado uma tela de resumo, com a quantidade de cada doce.
+
+- Ambos os fluxos voltam para a tela principal, fechando o modal.
+- Só pode fechar o pedido se tiver ao menos um doce escolhido.
 
 ### :dart: Requisitos não funcionais <a name="id01.2.2"></a>
 
@@ -53,8 +80,7 @@ Sua aplicação deve ter:
 
 - ReactJs
 - fazer deploy
-- React-translate ou i18next para criação da parte de idiomas da aplicação
-- Uso de componentes funcionais, usando hooks específicos para isso.
+- validação de forms da forma que achar melhor
 
 <br />
 
@@ -71,9 +97,10 @@ Você será bem avaliado se usar:
 - organizar e dividir bem os arquivos
 - Componentizar e separar bem o que achar que deve
 - Usar typeScript
-- Aplicar inversão de dependência ao usar o hook de tradução, sendo que sua aplicação não dependa diretamente do hook de tradução.
-- Explicar a vantagem de usar hooks e não HOC's
-- Evidenciar porquê usar o hook através de um custom hook é vantajoso para esse caso.
+- Fazer funções genéricas de avançar e retornar nos fluxos do modal
+- Explicar o funcionamento da função de avançar e retornar genérica para todos casos e suas vantagens eem relação a ter uma função para cada caso do modal.
+- Adicionar um evento ao finalizar um fluxo que pergunte se deseja finalizar compra, que já ative o fluxo do final se a pessoa clicar em sim, fluxo que seria ativado por botão da home. Fazendo isso com curriyng functions é algo ainda mais bem visto.
+- Explicar o que é handling functions e curried functions.
 
 <br />
 
@@ -124,14 +151,6 @@ git clone https://github.com/<meu_user>/<my-repo>.git
 Antes ou depois de realizar esse desafio, você pode pegar desafios parecidos do front-end mentor ou similares. Isso te ajuda a fixar e melhorar. Vou deixar alguns a seguir, pode te ajudar a se inspirar.
 
 O segredo aqui é fazer modelos parecidos até ganhar algum conforto com fazer algo com essas técnicas e esse modelo de desafio, então quem sabe pegar outros mais difíceis.
-
-[Social media dashboard with theme switcher](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H)
-
-<br>
-
-[Calculator app](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29)
-
-<br>
 
 Você também pode usar o dribbble para se inspirar.
 
